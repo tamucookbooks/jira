@@ -23,3 +23,9 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+node.set[:java][:jdk_version] = '7'
+node.set[:java][:install_flavor] = "oracle"
+node.set[:java][:oracle][:accept_oracle_download_terms] = true
+
+include_recipe "java"

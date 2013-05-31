@@ -6,5 +6,3 @@ default[:jira][:user] = "jira"
 default[:jira][:group] = "jira"
 default[:jira][:install_dir] = "/opt/jira"
 default[:jira][:home_dir] = "/opt/jira_home"
-
-
