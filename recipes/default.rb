@@ -29,3 +29,4 @@ node.set[:java][:install_flavor] = "oracle"
 node.set[:java][:oracle][:accept_oracle_download_terms] = true
 
 include_recipe "java"
+include_recipe "jira::deploy"
