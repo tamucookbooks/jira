@@ -1,6 +1,7 @@
-default[:jira][:download_url] = "http://www.atlassian.com/software/jira/downloads/binary/#{node[:jira][:package]}"
 default[:jira][:version] = "6.0.1"
-default[:jira][:package] = "atlassian-jira-#{node[:jira][:version]}.tar.gz" 
+default[:jira][:package] = "atlassian-jira-#{node[:jira][:version]}.tar.gz"
+
+default[:jira][:download_url] = "http://downloads.atlassian.com/software/jira/downloads/#{node[:jira][:package]}"
 
 default[:jira][:user] = "jira"
 default[:jira][:group] = "jira"
