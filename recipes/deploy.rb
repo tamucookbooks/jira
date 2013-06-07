@@ -5,6 +5,15 @@ ark 'jira' do
   only_if { node[:jira][:installed_version] != node[:jira][:version] } 
   owner node[:jira][:user]
   group node[:jira][:group]
+  notifies :create, "ruby_block[set_installed_version]", :immediately
+end
+
+ruby_block "set_installed_version" do
+  block do
+    node.set[:jira][:installed_version] = node[:jira][:version]
+    node.save
+  end
+  action :nothing
 end
 
 directory node[:jira][:home_dir] do
