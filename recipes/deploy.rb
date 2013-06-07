@@ -7,5 +7,12 @@ ark 'jira' do
   group node[:jira][:group]
 end
 
+directory node[:jira][:home_dir] do
+  action :create
+  owner node[:jira][:user]
+  group node[:jira][:group]
+  mode "0754"
+end
+
 include_recipe "jira::configure_application"
 include_recipe "jira::service"
