@@ -1,6 +1,6 @@
 cookbook 'java'
-cookbook 'artifact'
 cookbook 'ark'
+cookbook 'postgresql'
 
 group :integration do
   cookbook "jira", :path => "."

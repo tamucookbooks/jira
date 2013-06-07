@@ -1,0 +1,5 @@
+default[:jira][:database][:type] = "postgresql"
+default[:jira][:database][:user] = "jira"
+default[:jira][:database][:password] = "jira"
+default[:jira][:database][:host] = "localhost"
+default[:jira][:database][:name] = "jira"
