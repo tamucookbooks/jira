@@ -152,6 +152,27 @@ This cookbook is meant to make configuring jira very easy just by using attribut
 }
 ```
 
+If you are using a proxy in front of jira for ssl you can have jira set up for that by setting http_proxy to true and changing the proxy_name. ( by default the proxy name is the fqdn of the node jira is installed on)
+
+```json
+{
+  "name":"my_node",
+  "attributes": {
+    "jira": {
+      "catalina": {
+        "connector": {
+          "https_proxy": true,
+          "proxy_name": "tickets.my_domain.com"
+        }
+      }
+    }
+  },
+  "run_list": [
+    "recipe[jira]"
+  ]
+}
+```
+
 #### jira::database
 
 By default the database installed and used is postgresql.
