@@ -24,4 +24,5 @@ directory node[:jira][:home_dir] do
 end
 
 include_recipe "jira::configure_application"
+include_recipe "jira::configure_server"
 include_recipe "jira::service"
