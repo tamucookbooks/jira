@@ -1,3 +1,10 @@
+directory node[:jira][:dir] do
+  action :create
+  owner node[:jira][:user]
+  group node[:jira][:group]
+  mode "0754"
+end
+
 ark 'jira' do
   url node[:jira][:download_url]
   action :put
