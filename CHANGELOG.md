@@ -1,5 +1,9 @@
 # CHANGELOG for jira
 
+## 0.1.2:
+
+* Fixed missing jira dir
+
 ## 0.1.1:
 
 * Add options to use proxy for https
