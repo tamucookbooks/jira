@@ -1,4 +1,4 @@
-default[:jira][:version] = "6.0.1"
+default[:jira][:version] = "6.0.3"
 default[:jira][:package] = "atlassian-jira-#{node[:jira][:version]}.tar.gz"
 
 default[:jira][:download_url] = "http://downloads.atlassian.com/software/jira/downloads/#{node[:jira][:package]}"

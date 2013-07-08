@@ -26,19 +26,19 @@ Attributes
     <td><tt>['jira']['version']</tt></td>
     <td>String</td>
     <td>version of jira to download and install</td>
-    <td><tt>6.0.1</tt></td>
+    <td><tt>6.0.3</tt></td>
   </tr>
   <tr>
     <td><tt>['jira']['package']</tt></td>
     <td>String</td>
     <td>jira package to download</td>
-    <td><tt>atlassian-jira-6.0.1.tar.gz</tt></td>
+    <td><tt>atlassian-jira-6.0.3.tar.gz</tt></td>
   </tr>
   <tr>
     <td><tt>['jira']['download_url']</tt></td>
     <td>String</td>
     <td>url to download jira from</td>
-    <td><tt>http://downloads.atlassian.com/software/jira/downloads/atlassian-jira-6.0.1.tar.gz</tt></td>
+    <td><tt>http://downloads.atlassian.com/software/jira/downloads/atlassian-jira-6.0.3.tar.gz</tt></td>
   </tr>
   <tr>
     <td><tt>['jira']['user']</tt></td>
