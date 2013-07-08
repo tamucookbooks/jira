@@ -21,6 +21,7 @@ ruby_block "set_installed_version" do
     node.save
   end
   action :nothing
+  not_if { Chef::Config[:solo] }
 end
 
 directory node[:jira][:home_dir] do
