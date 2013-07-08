@@ -1,5 +1,9 @@
 # CHANGELOG for jira
 
+## 0.1.3:
+
+* Upped default version to install
+
 ## 0.1.2:
 
 * Fixed missing jira dir
