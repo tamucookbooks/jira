@@ -1,5 +1,10 @@
 # CHANGELOG for jira
 
+## 0.1.4:
+
+* not setting jira installed attribute in chef solo
+* assuming database gets created on localhost
+
 ## 0.1.3:
 
 * Upped default version to install
