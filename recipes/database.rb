@@ -5,7 +5,7 @@ when "postgresql"
   include_recipe "postgresql::server"
   include_recipe "postgresql::ruby"
 
-  connection_info = { :host => node[:jira][:database][:host],
+  connection_info = { :host => "localhost",
                       :port => node[:postgresql][:config][:port],
                       :username => "postgres",
                       :password => node[:postgresql][:password][:postgres]
