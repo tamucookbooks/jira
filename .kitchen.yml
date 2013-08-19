@@ -10,7 +10,7 @@ platforms:
     customize:
       memory: 2048 
 suites:
-- name: default 
+- name: service
   run_list: 
   - recipe[jira]
   attributes: {
@@ -20,5 +20,30 @@ suites:
       "oracle": {
         "accept_oracle_download_terms": true
       }
+    }
+  }
+- name: postgresql
+  run_list:
+  - recipe[jira::database]
+  attributes: {
+    "postgresql": {
+      "password": {
+        "postgres": "dontcare"
+      }
+    }
+  }
+- name: mysql
+  run_list:
+  - recipe[jira::database]
+  attributes: {
+    "jira": {
+      "database": {
+        "type": "mysql"
+      }
+    },
+    "mysql": {
+      "server_root_password": "dontcare",
+      "server_debian_password": "dontcare",
+      "server_repl_password": "dontcare"
     }
   }
