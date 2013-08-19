@@ -27,5 +27,26 @@ when "postgresql"
   end
 
 when "mysql"
-  #TODO: implement
+  include_recipe "mysql::server"
+  include_recipe "mysql::ruby"
+
+  connection_info = { :host => "localhost",
+                      :port => node[:mysql][:port],
+                      :username => "root",
+                      :password => node[:mysql][:server_root_password]
+                    }
+
+  mysql_database node[:jira][:database][:name] do
+    connection connection_info
+    action :create
+  end
+
+  mysql_database_user node[:jira][:database][:user] do
+    action :create
+    password node[:jira][:database][:password]
+    database_name node[:jira][:database][:name]
+    connection connection_info
+  end
+else
+  Chef::Log.warning("Only MySQL and Postgresql are supported by this recipe")
 end
