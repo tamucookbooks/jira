@@ -48,5 +48,5 @@ when "mysql"
     connection connection_info
   end
 else
-  Chef::Log.warning("Only MySQL and Postgresql are supported by this recipe")
+  Chef::Log.warn("Only MySQL and Postgresql are supported by this recipe")
 end
