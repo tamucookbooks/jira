@@ -9,6 +9,8 @@ platforms:
     require_chef_omnibus: true
     customize:
       memory: 2048 
+  run_list:
+    - recipe[apt]
 suites:
 - name: service
   run_list: 

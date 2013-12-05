@@ -1,4 +1,4 @@
-template "#{node[:jira][:dir]}/jira/conf/server.xml" do
+template ::File.join(node[:jira][:dir], 'conf/server.xml') do
   action :create
   owner node[:jira][:user]
   group node[:jira][:group]

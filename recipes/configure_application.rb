@@ -1,4 +1,4 @@
-template "#{node[:jira][:dir]}/jira/atlassian-jira/WEB-INF/classes/jira-application.properties" do
+template ::File.join(node[:jira][:dir], 'atlassian-jira/WEB-INF/classes/jira-application.properties') do
   action :create
   owner node[:jira][:user]
   group node[:jira][:group]

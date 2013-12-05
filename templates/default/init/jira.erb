@@ -4,7 +4,7 @@
 # description: JIRA
 
 USER=<%= node[:jira][:user] %>
-BASE=<%= node[:jira][:app_dir] %>
+BASE=<%= node[:jira][:dir] %>
 export JAVA_HOME=<%= node[:java][:home] %>
 
 case "$1" in
