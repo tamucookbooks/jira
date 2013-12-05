@@ -1,11 +1,11 @@
-template "/etc/init.d/jira" do
+template '/etc/init.d/jira' do
   action :create
-  source "init/jira.erb"
-  mode "0755"
-  notifies :restart, "service[jira]", :delayed
+  source 'init/jira.erb'
+  mode 0755
+  notifies :restart, 'service[jira]', :delayed
 end
 
-service "jira" do
+service 'jira' do
   supports :start => true, :restart => true
   action [:enable, :start]
 end

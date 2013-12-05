@@ -46,23 +46,23 @@
     -->
     <Service name="Catalina">
 
-        <Connector port="<%= node[:jira][:catalina][:connector][:port] %>"
+        <Connector port="<%= node['jira']['catalina']['connector']['port'] %>"
 
-                   maxThreads="<%= node[:jira][:catalina][:connector][:max_threads] %>"
-                   minSpareThreads="<%= node[:jira][:catalina][:connector][:min_spare_theads] %>"
-                   connectionTimeout="<%= node[:jira][:catalina][:connector][:connection_timeout] %>"
+                   maxThreads="<%= node['jira']['catalina']['connector']['max_threads'] %>"
+                   minSpareThreads="<%= node['jira']['catalina']['connector']['min_spare_theads'] %>"
+                   connectionTimeout="<%= node['jira']['catalina']['connector']['connection_timeout'] %>"
 
-                   enableLookups="<%= node[:jira][:catalina][:connector][:enable_lookups] %>"
-                   maxHttpHeaderSize="<%= node[:jira][:catalina][:connector][:max_http_header_size] %>"
-                   protocol="<%= node[:jira][:catalina][:connector][:protocol] %>"
-                   useBodyEncodingForURI="<%= node[:jira][:catalina][:connector][:use_body_encoding_for_uri] %>"
-                   redirectPort="<%= node[:jira][:catalina][:connector][:redirect_port] %>"
-                   acceptCount="<%= node[:jira][:catalina][:connector][:accept_count] %>"
-                   disableUploadTimeout="<%= node[:jira][:catalina][:connector][:disable_upload_timeout] %>"
-                   <%if node[:jira][:catalina][:connector][:https_proxy] -%>
-                   scheme="<%= node[:jira][:catalina][:connector][:scheme] %>"
-                   proxyPort="<%= node[:jira][:catalina][:connector][:proxy_port] %>"
-                   proxyName="<%= node[:jira][:catalina][:connector][:proxy_name] %>" 
+                   enableLookups="<%= node['jira']['catalina']['connector']['enable_lookups'] %>"
+                   maxHttpHeaderSize="<%= node['jira']['catalina']['connector']['max_http_header_size'] %>"
+                   protocol="<%= node['jira']['catalina']['connector']['protocol'] %>"
+                   useBodyEncodingForURI="<%= node['jira']['catalina']['connector']['use_body_encoding_for_uri'] %>"
+                   redirectPort="<%= node['jira']['catalina']['connector']['redirect_port'] %>"
+                   acceptCount="<%= node['jira']['catalina']['connector']['accept_count'] %>"
+                   disableUploadTimeout="<%= node['jira']['catalina']['connector']['disable_upload_timeout'] %>"
+                   <%if node['jira']['catalina']['connector']['https_proxy'] -%>
+                   scheme="<%= node['jira']['catalina']['connector']['scheme'] %>"
+                   proxyPort="<%= node['jira']['catalina']['connector']['proxy_port'] %>"
+                   proxyName="<%= node['jira']['catalina']['connector']['proxy_name'] %>" 
                    <% end -%> 
                    />
 

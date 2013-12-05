@@ -3,9 +3,9 @@
 # chkconfig: 2345 90 10
 # description: JIRA
 
-USER=<%= node[:jira][:user] %>
-BASE=<%= node[:jira][:dir] %>
-export JAVA_HOME=<%= node[:java][:home] %>
+USER=<%= node['jira']['user'] %>
+BASE=<%= node['jira']['dir'] %>
+export JAVA_HOME=<%= node['java']['home'] %>
 
 case "$1" in
   start)
