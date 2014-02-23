@@ -9,7 +9,7 @@ This cookbook has only been officially test with Ubuntu-12.04 at this time.
 #### cookbooks 
 - `database` - https://github.com/opscode-cookbooks/database
 - `postgresql` - https://github.com/opscode-cookbooks/postgresql
-- `ark` -  
+- `ark` - used to dowload and extract the jira .jar file
 
 Attributes
 ----------
@@ -26,19 +26,13 @@ Attributes
     <td><tt>['jira']['version']</tt></td>
     <td>String</td>
     <td>version of jira to download and install</td>
-    <td><tt>6.0.3</tt></td>
+    <td><tt>6.1.7</tt></td>
   </tr>
   <tr>
-    <td><tt>['jira']['package']</tt></td>
-    <td>String</td>
-    <td>jira package to download</td>
-    <td><tt>atlassian-jira-6.0.3.tar.gz</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['jira']['download_url']</tt></td>
+    <td><tt>['jira']['base_url']</tt></td>
     <td>String</td>
     <td>url to download jira from</td>
-    <td><tt>http://downloads.atlassian.com/software/jira/downloads/atlassian-jira-6.0.3.tar.gz</tt></td>
+    <td><tt>http://downloads.atlassian.com/software/jira/downloads</tt></td>
   </tr>
   <tr>
     <td><tt>['jira']['user']</tt></td>
