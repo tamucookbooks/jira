@@ -40,4 +40,4 @@ user node['jira']['user'] do
 end
 
 include_recipe 'java'
-include_recipe 'jira::deploy'
+include_recipe 'jira::server'
