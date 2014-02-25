@@ -3,8 +3,12 @@ driver_plugin: vagrant
 
 platforms:
 - name: ubuntu-12.04
+  driver:
+    customize:
+      memory: 1024
   run_list:
     - recipe[apt]
+
 suites:
 - name: service
   run_list: 
