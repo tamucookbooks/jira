@@ -50,13 +50,13 @@ Attributes
     <td><tt>['jira']['dir']</tt></td>
     <td>String</td>
     <td>base directory to store the jira app and home dir in</td>
-    <td><tt>/usr/local/jira</tt></td>
+    <td><tt>/opt/jira</tt></td>
   </tr>
   <tr>
     <td><tt>['jira']['home_dir']</tt></td>
     <td>String</td>
     <td>the jira home directory path</td>
-    <td><tt>/usr/local/jira/jira_home</tt></td>
+    <td><tt>/var/jira</tt></td>
   </tr>
   <tr>
     <td><tt>['jira']['app_dir']</tt></td>

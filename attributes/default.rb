@@ -6,7 +6,7 @@ default['jira']['group'] = 'jira'
 # base dir to store jira
 default['jira']['dir'] = '/opt/jira'
 # home directory stores configs, and things specific to instance
-default['jira']['home_dir'] = '/usr/local/jira'
+default['jira']['home_dir'] = '/var/jira'
 
 default['jira']['app_properties']['jira_home'] = node['jira']['home_dir']
 
