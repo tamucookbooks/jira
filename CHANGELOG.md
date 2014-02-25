@@ -1,5 +1,11 @@
 # CHANGELOG for jira
 
+## 0.2.0:
+
+* cleaned up recipes
+* upped default version of jira
+* changed jira installation directory
+
 ## 0.1.4:
 
 * not setting jira installed attribute in chef solo
