@@ -24,10 +24,6 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-node.set['java']['jdk_version'] = '7'
-node.set['java']['install_flavor'] = 'oracle'
-node.set['java']['oracle']['accept_oracle_download_terms'] = true
-
 group node['jira']['group'] do
   action :create
 end
@@ -39,5 +35,4 @@ user node['jira']['user'] do
   comment 'jira application user'
 end
 
-include_recipe 'java'
 include_recipe 'jira::server'
