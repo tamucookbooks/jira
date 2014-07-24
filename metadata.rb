@@ -7,6 +7,6 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.2.0'
 supports         'ubuntu', '>= 12.04'
 
-%w{ java ark postgresql mysql database }.each do |dep|
+%w{ ark postgresql mysql database }.each do |dep|
   depends dep
 end
