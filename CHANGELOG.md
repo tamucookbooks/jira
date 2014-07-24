@@ -1,5 +1,9 @@
 # CHANGELOG for jira
 
+## 0.3.0
+
+* removed java
+
 ## 0.2.0:
 
 * cleaned up recipes
