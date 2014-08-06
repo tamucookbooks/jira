@@ -1,4 +1,4 @@
-default['jira']['version'] = '6.1.7'
+default['jira']['version'] = '6.3.1'
 default['jira']['base_url'] = 'http://downloads.atlassian.com/software/jira/downloads'
 default['jira']['user'] = 'jira'
 default['jira']['group'] = 'jira'
