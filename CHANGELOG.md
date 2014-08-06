@@ -1,5 +1,9 @@
 # CHANGELOG for jira
 
+## 0.4.0
+
+* upped jira version to 6.3.1
+
 ## 0.3.0
 
 * removed java
