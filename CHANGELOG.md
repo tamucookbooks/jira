@@ -1,5 +1,10 @@
 # CHANGELOG for jira
 
+## 0.4.1
+
+* upped jira version to 6.4.1
+
+
 ## 0.4.0
 
 * upped jira version to 6.3.1
