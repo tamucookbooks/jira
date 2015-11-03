@@ -1,15 +1,15 @@
 Jira Cookbook
 =============
-This cookbook installs and configures jira.  
+This cookbook installs and configures jira.
 
 Requirements
 ------------
-This cookbook has only been officially test with Ubuntu-12.04 at this time.
 
 #### cookbooks 
-- `database` - https://github.com/opscode-cookbooks/database
+
+- `ark` - https://github.com/opscode-cookbooks/ark.git
 - `postgresql` - https://github.com/opscode-cookbooks/postgresql
-- `ark` - used to dowload and extract the jira .jar file
+- `mysql` - https://github.com/chef-cookbooks/mysql
 
 Attributes
 ----------
@@ -26,7 +26,7 @@ Attributes
     <td><tt>['jira']['version']</tt></td>
     <td>String</td>
     <td>version of jira to download and install</td>
-    <td><tt>6.1.7</tt></td>
+    <td><tt>6.4.11</tt></td>
   </tr>
   <tr>
     <td><tt>['jira']['base_url']</tt></td>
@@ -59,26 +59,100 @@ Attributes
     <td><tt>/var/jira</tt></td>
   </tr>
   <tr>
-    <td><tt>['jira']['app_dir']</tt></td>
-    <td>String</td>
-    <td>the path created when the packages is extracted</td>
-    <td><tt>/usr/local/jira/jira</tt></td>
-  </tr>
-</table>
-
-#### jira::app_properties
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
     <td><tt>['jira']['app_properties']['jira_home']</tt></td>
     <td>String</td>
     <td>tells jira where to look for home directory</td>
     <td><tt>/usr/local/jira/home_dir</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['port']</tt></td>
+    <td>Integer</td>
+    <td>catalina port</td>
+    <td><tt>8080</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['max_threads']</tt></td>
+    <td>Integer</td>
+    <td>catalina max threads</td>
+    <td><tt>150</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['min_spare_threads']</tt></td>
+    <td>Integer</td>
+    <td>catalina min spare threads</td>
+    <td><tt>25</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['connection_timeout']</tt></td>
+    <td>Integer</td>
+    <td>catalina connection timeout</td>
+    <td><tt>20000</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['enable_lookups']</tt></td>
+    <td>String</td>
+    <td>catalina enable lookups</td>
+    <td><tt>false</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['max_http_header_size']</tt></td>
+    <td>Integer</td>
+    <td>catalina max http header size</td>
+    <td><tt>8192</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['protocol']</tt></td>
+    <td>String</td>
+    <td>catalina protocol</td>
+    <td><tt>HTTP/1.1</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['use_body_encoding_for_uri']</tt></td>
+    <td>String</td>
+    <td>catalina body coding for URI</td>
+    <td><tt>true</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['redirect_port']</tt></td>
+    <td>Integer</td>
+    <td>catalina redirect port</td>
+    <td><tt>8443</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['accept_count']</tt></td>
+    <td>Integer</td>
+    <td>catalina accept count</td>
+    <td><tt>100</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['disable_upload_timeout']</tt></td>
+    <td>String</td>
+    <td>catalina disable upload timeout</td>
+    <td><tt>true</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['https_proxy']</tt></td>
+    <td>Boolean</td>
+    <td>catalina use https proxy</td>
+    <td><tt>false</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['scheme']</tt></td>
+    <td>String</td>
+    <td>catalina proxy scheme</td>
+    <td><tt>https</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['proxy_port']</tt></td>
+    <td>Integer</td>
+    <td>catalina proxy port</td>
+    <td><tt>443</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['jira']['catalina']['connector']['proxy_name']</tt></td>
+    <td>String</td>
+    <td>catalina proxy name</td>
+    <td><tt>node['fqdn']</tt></td>
   </tr>
 </table>
 
@@ -194,3 +268,4 @@ License and Authors
 Authors: 
 
 * Jim Rosser
+* Victoria Blessing
