@@ -1,5 +1,11 @@
 # CHANGELOG for jira
 
+## 1.0.0
+
+* removed unnecessary database cookbook
+* updated readme
+* added 14.04 to test kitchen
+
 ## 0.4.2
 
 * upped jira version to 6.4.11
