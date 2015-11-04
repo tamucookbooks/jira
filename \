@@ -29,9 +29,6 @@ default['jira']['catalina']['connector']['scheme'] = 'https'
 default['jira']['catalina']['connector']['proxy_port'] = 443
 default['jira']['catalina']['connector']['proxy_name'] = node['fqdn']
 
-# To enable CAS plugin and use CAS for login: set enable to true 
-# and update cas_server_url_prefix and server_name
+# enable CAS plugin to use CAS for login
 default['jira']['plugin']['cas']['enable'] = false
-default['jira']['plugin']['cas']['cas_server_url_prefix'] = 'https://cas.domain.edu/cas'
-default['jira']['plugin']['cas']['server_name'] = 'https://jira.domain.edu'
 
