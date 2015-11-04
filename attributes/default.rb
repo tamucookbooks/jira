@@ -34,4 +34,6 @@ default['jira']['catalina']['connector']['proxy_name'] = node['fqdn']
 default['jira']['plugin']['cas']['enable'] = false
 default['jira']['plugin']['cas']['cas_server_url_prefix'] = 'https://cas.domain.edu/cas'
 default['jira']['plugin']['cas']['server_name'] = 'https://jira.domain.edu'
-
+default['jira']['plugin']['cas']['version'] = '3.4.1'
+default['jira']['plugin']['cas']['cas-client-core']['base_url'] = 'http://repo2.maven.org/maven2/org/jasig/cas/client/cas-client-core/'
+default['jira']['plugin']['cas']['cas-client-atlassian']['base_url'] = 'http://repo2.maven.org/maven2/org/jasig/cas/client/cas-client-integration-atlassian/'

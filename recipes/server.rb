@@ -78,34 +78,7 @@ template ::File.join(node['jira']['dir'], 'conf/server.xml') do
 end
 
 if node['jira']['plugin']['cas]'['enable'] do
-  include_recipe "cas"
-template ::File.join(node['jira']['dir'], 'conf/web.xml') do
-  action :create
-  owner node['jira']['user']
-  group node['jira']['group']
-  mode 0644
-  source 'config_files/web.xml.erb'
-  notifies :restart, 'service[jira]', :delayed
-end
-
-template ::File.join(node['jira']['dir'], 'atlassian-jira/WEB-INF/classes/seraph-config.xml') do
-  action :create
-  owner node['jira']['user']
-  group node['jira']['group']
-  mode 0644
-  source 'config_files/seraph-config.xml.erb'
-  notifies :restart, 'service[jira]', :delayed
-end
-
-ark 'cas-client-core' do
-  url "#{node['jira']['plugin']['cas']['base_url']}/#{cas-client-core_pkg}"
-  action :put
-  path '/opt/'
-  only_if { node['jira']['plugin']['cas']['installed_version'] != node['jira']['plugin']['cas']['version'] }
-  owner node['jira']['user']
-  group node['jira']['group']
-  notifies :create, 'ruby_block[set_installed_version]', :immediately
-end
+  include_recipe "jira::cas"
 end
 
 template '/etc/init.d/jira' do

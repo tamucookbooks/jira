@@ -17,40 +17,47 @@ platforms:
 
 suites:
 - name: service
-  run_list: 
-  - recipe[java]
-  - recipe[jira]
-  attributes: {
-    "java": {
-      "jdk_version": '8',
-      "install_flavor": "oracle",
-      "oracle": {
-        "accept_oracle_download_terms": true
-      }
-    }
-  }
+  run_list:
+    - recipe[java]
+    - recipe[jira]
+  attributes:
+    java:
+      jdk_version: '8'
+      install_flavor: "oracle"
+      oracle:
+        accept_oracle_download_terms: true
+
 - name: postgresql
   run_list:
   - recipe[jira::database]
-  attributes: {
-    "postgresql": {
-      "password": {
-        "postgres": "dontcare"
-      }
-    }
-  }
+  attributes:
+    postgresql:
+      password:
+        postgres: "dontcare"
+
 - name: mysql
   run_list:
   - recipe[jira::database]
-  attributes: {
-    "jira": {
-      "database": {
-        "type": "mysql"
-      }
-    },
-    "mysql": {
-      "server_root_password": "dontcare",
-      "server_debian_password": "dontcare",
-      "server_repl_password": "dontcare"
-    }
-  }
+  attributes:
+    jira:
+      database:
+        type: "mysql"
+    mysql:
+      server_root_password: "dontcare"
+      server_debian_password: "dontcare"
+      server_repl_password: "dontcare"
+
+- name: cas
+  run_list:
+  - recipe[java]
+  - recipe[jira]
+  attributes:
+    java:
+      jdk_version: '8'
+      install_flavor: "oracle"
+      oracle:
+        accept_oracle_download_terms: true
+    jira:
+      plugin:
+        cas:
+          enable: true
