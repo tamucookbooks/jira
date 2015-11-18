@@ -16,7 +16,7 @@
             -->
             <param-name>login.url</param-name>
             <!--<param-value>/login.jsp?permissionViolation=true&amp;os_destination=${originalurl}&amp;page_caps=${pageCaps}&amp;user_role=${userRole}</param-value>-->
-            <param-value><%= node['jira']['plugin']['cas]'['cas_server_url_prefix'] %>/login?service=${originalurl}</param-value>
+            <param-value><%= node['jira']['plugin']['cas']['cas_server_url_prefix'] %>/login?service=${originalurl}</param-value>
         </init-param>
         <init-param>
             <!--
@@ -27,7 +27,7 @@
             <param-name>link.login.url</param-name>
             <!--<param-value>/login.jsp?os_destination=${originalurl}</param-value>-->
             <!--<param-value>/secure/Dashboard.jspa?os_destination=${originalurl}</param-value>-->
-            <param-value><%= node['jira']['plugin']['cas]'['cas_server_url_prefix'] %>/login?service=${originalurl}</param-value>
+            <param-value><%= node['jira']['plugin']['cas']['cas_server_url_prefix'] %>/login?service=${originalurl}</param-value>
         </init-param>
         <init-param>
             <!-- URL for logging out.
@@ -36,7 +36,7 @@
                  -->
             <param-name>logout.url</param-name>
             <!--<param-value>/secure/Logout!default.jspa</param-value>-->
-            <param-value><%= node['jira']['plugin']['cas]'['cas_server_url_prefix'] %>/logout</param-value>
+            <param-value><%= node['jira']['plugin']['cas']['cas_server_url_prefix'] %>/logout</param-value>
         </init-param>
         <!--
           The path to *forward* to when the user tries to POST to a protected resource (rather than clicking on

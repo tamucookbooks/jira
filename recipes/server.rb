@@ -77,9 +77,7 @@ template ::File.join(node['jira']['dir'], 'conf/server.xml') do
   notifies :restart, 'service[jira]', :delayed
 end
 
-if node['jira']['plugin']['cas]'['enable'] do
-  include_recipe "jira::cas"
-end
+include_recipe "jira::cas" if node['jira']['plugin']['cas']['enable']
 
 template '/etc/init.d/jira' do
   action :create

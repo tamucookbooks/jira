@@ -42,21 +42,21 @@ template ::File.join(node['jira']['dir'], 'atlassian-jira/WEB-INF/classes/seraph
   notifies :restart, 'service[jira]', :delayed
 end
 
-cas-client-core_pkg = "cas-client-core-#{node['jira']['plugin']['cas']['version']}.jar"
+cas_core_pkg = "cas-client-core-#{node['jira']['plugin']['cas']['version']}.jar"
 
-remote_file ::File.join(node['jira']['dir'], 'atlassian-jira/WEB-INF/lib/#{cas-client-core_pkg}') do
+remote_file ::File.join(node['jira']['dir'], 'atlassian-jira/WEB-INF/lib/#{cas_core_pkg}') do
   action :create_if_missing
-  source "#{node['jira']['plugin']['cas']['cas-client-core']['base_url']}/#{node['jira']['plugin']['cas']['version']}/#{cas-client-core_pkg}"
+  source "#{node['jira']['plugin']['cas']['cas-client-core']['base_url']}/#{node['jira']['plugin']['cas']['version']}/#{cas_core_pkg}"
   owner node['jira']['user']
   group node['jira']['group']
   notifies :restart, 'service[jira]', :delayed
 end
 
-cas-client-atlassian_pkg = "cas-client-integration-atlassian-#{node['jira']['plugin']['cas']['version']}.jar"
+cas_atlassian_pkg = "cas-client-integration-atlassian-#{node['jira']['plugin']['cas']['version']}.jar"
 
-remote_file ::File.join(node['jira']['dir'], 'atlassian-jira/WEB-INF/lib/#{cas-client--atlassian_pkg}') do
+remote_file ::File.join(node['jira']['dir'], 'atlassian-jira/WEB-INF/lib/#{cas_atlassian_pkg}') do
   action :create_if_missing
-  source "#{node['jira']['plugin']['cas']['cas-client-atlassian']['base_url']}/#{node['jira']['plugin']['cas']['version']}/#{cas-client-atlassian_pkg}"
+  source "#{node['jira']['plugin']['cas']['cas-client-atlassian']['base_url']}/#{node['jira']['plugin']['cas']['version']}/#{cas_atlassian_pkg}"
   owner node['jira']['user']
   group node['jira']['group']
   notifies :restart, 'service[jira]', :delayed
